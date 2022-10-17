@@ -51,11 +51,18 @@
     <Compile Include="Models\OnlineExhibitor.cs" />
     <Compile Include="Models\ProductCategories.cs" />
     <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\SearchExhibitors.cs" />
     <Compile Include="Models\Secondaryuser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExhibitorImportDAL\ExhibitorImportDAL.csproj">
+      <Project>{2d7a7432-0de7-4d9a-9357-50fce15571d3}</Project>
+      <Name>ExhibitorImportDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

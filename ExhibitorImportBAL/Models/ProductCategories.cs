@@ -8,6 +8,7 @@ namespace ExhibitorImportBAL.Models
 {
    public class ProductCategories
     {
+        public int ID { get; set; }
         public string CategoryCode { get; set; }
         public string CategoryName { get; set; }
         public string ParentCategoryCode { get; set; }
