@@ -46,5 +46,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchExhibitorDAL.cs" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SQLObjects\AlterScripts.sql" />
+    <Content Include="SQLObjects\StoredProcedure.sp_InsertExhibitors.sql" />
+    <Content Include="SQLObjects\StoredProcedure.sp_InsertLevelCategories.sql" />
+    <Content Include="SQLObjects\StoredProcedure.sp_TruncateTables.sql" />
+    <Content Include="SQLObjects\UserDefinedTableTypes.UDT_Categories.sql" />
+    <Content Include="SQLObjects\UserDefinedTableTypes.UDT_Exhibitors.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

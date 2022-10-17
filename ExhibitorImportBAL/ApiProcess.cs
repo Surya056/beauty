@@ -66,14 +66,10 @@ namespace ExhibitorImportBAL
 
 
 
-            } while (From < 200);
+            } while (From < totalCount);
 
 
             SaveAllCategories();
-
-
-
-
 
         }
 
@@ -87,13 +83,6 @@ namespace ExhibitorImportBAL
             dataTable.Columns.Add("CategoryName", typeof(string));
             dataTable.Columns.Add("ParentCategoryCode", typeof(string));
             dataTable.Columns.Add("CategoryLevel", typeof(string));
-
-            //dt.Columns.Add("ID", typeof(Int32));
-            //dt.Columns.Add("MainCatagory", typeof(string));
-            //dt.Columns.Add("FirstLevelCatagory", typeof(string));
-            //dt.Columns.Add("SecondLevelCatagory", typeof(string));
-            //dt.Columns.Add("ThirdLevelCatagory", typeof(string));
-            //dt.Columns.Add("ID", typeof(string));
 
             dt = ToDataTable(searchExhibitors);
             var allCategories = productCategories.OrderBy(x => x.CategoryCode).ToList();
@@ -168,7 +157,7 @@ namespace ExhibitorImportBAL
             searchExhibitor.EmailAddress = onlineExhibitor.Response.AccountEmail;
             searchExhibitor.Website = onlineExhibitor.Response.CompanyWebsite;
             searchExhibitor.StandManager = string.Empty;// check if its there what have to be kept in that
-           // searchExhibitor.Profile = onlineExhibitor.Response.CompanyProfile;
+            searchExhibitor.Profile = onlineExhibitor.Response.CompanyProfile?.TrimEnd();
             searchExhibitor.Exhibitor_DisplayName = string.Empty;
             var exhibiterSlug = onlineExhibitor.Response.ExhibitorName?.ToLower().Replace(" ", "-");
             searchExhibitor.Slug = exhibiterSlug;
